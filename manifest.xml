@@ -20,5 +20,9 @@
             <name>IDisplayModes</name>
             <instance>default</instance>
         </interface>
+        <interface>
+            <name>IReadingEnhancement</name>
+            <instance>default</instance>
+        </interface>
     </hal>
 </manifest>
