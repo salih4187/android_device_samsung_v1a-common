@@ -20,9 +20,6 @@ DEVICE_PATH := device/samsung/v1a-common
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    device/samsung/v1a-common/overlay/lineage-sdk \
-    device/samsung/v1a-common/overlay/hardware/samsung/AdvancedDisplay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := xlarge
@@ -51,9 +48,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/keylayout/gpio_keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio_keys.kl \
     $(DEVICE_PATH)/configs/keylayout/sec_e-pen.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sec_e-pen.kl \
     $(DEVICE_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sec_touchscreen.kl
-
-# Properties
--include $(LOCAL_PATH)/system_prop.mk
 
 # Ramdisk
 PRODUCT_PACKAGES += \
