@@ -31,6 +31,9 @@ TARGET_SCREEN_DENSITY := 320
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
 # Shims
 TARGET_LD_SHIM_LIBS += \
     /vendor/bin/gpsd|/vendor/lib/libshim_dmitry_gps.so
