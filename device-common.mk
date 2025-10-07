@@ -53,6 +53,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_dmitry_gps
 
+# Properties
+-include $(DEVICE_PATH)/system_prop.mk
+
 # Shipping API level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 

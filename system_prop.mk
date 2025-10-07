@@ -14,26 +14,11 @@
 # limitations under the License.
 #
 
-# Inherit from universal5420-common
-include device/samsung/universal5420-common/BoardConfigCommon.mk
-
-DEVICE_PATH := device/samsung/v1a-common
-
-# Include path
-TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
-
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-
-# Display
-TARGET_SCREEN_DENSITY := 320
-
-# HIDL
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
-
-# Shims
-TARGET_LD_SHIM_LIBS += \
-    /vendor/bin/gpsd|/vendor/lib/libshim_dmitry_gps.so
-
-# Inherit from the proprietary version
--include vendor/samsung/v1a-common/BoardConfigVendor.mk
+# Dalvik Heap
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heapgrowthlimit=192m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=2m \
+    dalvik.vm.heapmaxfree=8m
